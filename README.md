@@ -3,47 +3,48 @@
 
 
 ## Table of Contents
-![Iris Species](https://github.com/miriamroddy/pands-project/blob/main/3irisimage.png)
-The Fisher's Iris dataset is a classic dataset in the field of data analytics and machine learning. It consists of 150 instances of iris flowers, with each instance having measurements of four features: sepal length, sepal width, petal length, and petal width. The dataset is commonly used for classification tasks, such as predicting the species of iris flower based on the four measurements. The three species in the dataset are setosa, versicolor, and virginica. The dataset is widely used for exploring machine learning algorithms, statistical analysis, and data visualization techniques.
-* [Introduction](#introduction)
-* [Data Description](#datadescription)
-* [Data Preparation](#datapreparation)
-* [Data Exploration](#dataexploration)
-* [Data Analysis](#dataanalysis)
-* [Conclusion](#conclusion)
 
-* [References](#references)
+- [Introduction](#introduction)
+- [Data Description](#data-description)
+- [Data Preparation](#data-preparation)
+- [Data Exploration](#data-exploration)
+- [Data Analysis](#data-analysis)
+- [Conclusion](#conclusion)
 
 
 ======
 - - - -
-# ***Introduction***
-
+## Introduction
+The Fisher's Iris dataset is a classic dataset in the field of data analytics and machine learning. It consists of 150 instances of iris flowers, with each instance having measurements of four features: sepal length, sepal width, petal length, and petal width. The dataset is commonly used for classification tasks, such as predicting the species of iris flower based on the four measurements. The three species in the dataset are setosa, versicolor, and virginica. The dataset is widely used for exploring machine learning algorithms, statistical analysis, and data visualization techniques.
+![Iris Species](https://github.com/miriamroddy/pands-project/blob/main/3irisimage.png)
 
 - - - -
 
- # ***Datadescription***
+## Data Description
  
 
 --------
-  # ***Datapreparation***  
+## Data Preparation
 
-
-  # ***Dataexploration***
 
 ----
 
-  # ***Dataanalysis***
+## Data Exploration
 
 
 - - - -
 
-  # ***Conclusion***
+## Data Analysis
 
 
 - - - -
+## Conclusion
 
-References
+- - - -
+
+
+
+## References
 ====
 
 - PEP 8 -- Style Guide for Python Code - (https://www.python.org/dev/peps/pep-0008/)
