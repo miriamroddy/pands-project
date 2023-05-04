@@ -36,6 +36,9 @@ descriptive_stats_str = descriptive_stats.to_string(header='\n\n', index=False)
 
 with open('descriptive_stats.txt', 'w') as f:
     print(missing_msg, file=f)
+
+## Include an empty string so that the output looks less cluttered.
+
     print('', file=f)
     print(error_msg, file=f)
     print(descriptive_stats_str, file=f)
