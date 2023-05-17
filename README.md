@@ -60,6 +60,7 @@ Data columns (total 5 columns):
 dtypes: float64(4), object(1)
 memory usage: 6.0+ KB
 ```
+The dataset contains a total of 150 samples with an equal number of samples for each species of Iris. 
 
 Missing Values - When conducting research, is it vital to acknowledge and address missing values so that we can be confident about the validity and reliability of our analyses. As we can see from the output, the dataset thankfully doesn't contain any missing values:
 
@@ -153,7 +154,7 @@ virginica  0          0.97         0.97          0.96         0.96
 ----
 
 ## Statistical Analysis
-
+From the table below, we see that the mean sepal length was 5.84 cm, while the mean sepal width was 3.05 cm. The mean petal length was 3.76 cm, and the mean petal width was 1.20 cm:
 ```
 Descriptive Statistics:
 
@@ -168,6 +169,11 @@ min            4.30         2.00          1.00         0.10
 max            7.90         4.40          6.90         2.50
 
 ```
+It is also important that we look at these figures divided by species - if we examine the mean and SD of the flowers as a whole, we are losing a lot of important information. Using this code: 
+```
+f.write(str(Irisdata.groupby('species').describe().round(2)))
+```
+I grouped the observations by species and we see the following output:
 ```
            sepal_length                                      
                   count  mean   std  min   25%  50%  75%  max
@@ -177,6 +183,7 @@ versicolor         50.0  5.94  0.52  4.9  5.60  5.9  6.3  7.0
 virginica          50.0  6.59  0.64  4.9  6.22  6.5  6.9  7.9
 
 ```
+Iris sepals (the green leaf-like structures) vary among the iris species, with setosa having the shortest sepals and virginica having the longest.
 ```
            sepal_width                                      
                  count  mean   std  min   25%  50%   75%  max
@@ -185,6 +192,7 @@ setosa            50.0  3.42  0.38  2.3  3.12  3.4  3.68  4.4
 versicolor        50.0  2.77  0.31  2.0  2.52  2.8  3.00  3.4
 virginica         50.0  2.97  0.32  2.2  2.80  3.0  3.18  3.8
 ```
+Setosa generally having wider sepals compared to versicolor and virginica.
 ```
            petal_length                                      
                  count  mean   std  min  25%   50%   75%  max
@@ -192,7 +200,8 @@ species
 setosa            50.0  1.46  0.17  1.0  1.4  1.50  1.58  1.9
 versicolor        50.0  4.26  0.47  3.0  4.0  4.35  4.60  5.1
 virginica         50.0  5.55  0.55  4.5  5.1  5.55  5.88  6.9
-```
+``
+Setosas appear to have the shortest petals, while virginica iris flowers have the longest petals among the species.`
 ```
            petal_width                                      
                 count  mean   std  min  25%  50%  75%  max
@@ -201,6 +210,21 @@ setosa           50.0  0.24  0.11  0.1  0.2  0.2  0.3  0.6
 versicolor       50.0  1.33  0.20  1.0  1.2  1.3  1.5  1.8
 virginica        50.0  2.03  0.27  1.4  1.8  2.0  2.3  2.5
 ```
+When it comes to petal width, it appears that setosa iris flowers have the narrowest petals, while virginica iris flowers have relatively wider petals compared to the other species.
+However, descriptive statistics don't make inferences beyond the observed sample. If we want to make inferences about the three iris species beyond the measurements that [Anderson] (https://en.wikipedia.org/wiki/Edgar_Anderson) took, we need to use statistical methods which will allow us to confidently generalise from a sample to a population. ANOVA (Analysis of Variance) is used to determine whether the means of two or more groups are significantly different from each other by examining the variation between groups compared to the variation within groups. 
+
+I found significant variations among the species (F(2, 147) = 119.26, p < 0.001). Setosa, Versicolor, and Virginica exhibited distinct mean sepal lengths, with Setosa having the shortest mean (M = 5.01), Versicolor having an intermediate mean (M = 5.94), and Virginica having the longest mean (M = 6.59).
+
+Similarly, for 'Sepal Width,' there were significant differences observed (F(2, 147) = 47.36, p < 0.001). While Setosa showed distinctiveness in sepal width (M = 3.42), the differences between Versicolor (M = 2.77) and Virginica (M = 2.97) were not statistically significant.
+
+Regarding 'Petal Length,' the differences between species were highly significant (F(2, 147) = 1180.16, p < 0.001). Setosa displayed the shortest mean petal length (M = 1.46), followed by Versicolor (M = 4.26), and Virginica exhibiting the longest mean (M = 5.55).
+
+Finally, for 'Petal Width,' we found significant variations among the species (F(2, 147) = 960.01, p < 0.001). Setosa demonstrated the smallest mean petal width (M = 0.24), while Versicolor (M = 1.33) and Virginica (M = 2.03) showed higher and significantly different mean values.
+
+Overall, these results confirm that the iris species differ significantly in terms of sepal length, sepal width, petal length, and petal width. These findings provide valuable insights into the distinct characteristics of each iris species, aiding in their identification and classification."
+
+
+
 - - - -
 
 ## Machine Learning Models
@@ -216,10 +240,9 @@ Another feature of the dataset is the bimodal distribution of the petal length m
 
 ## References
 ====
-
-- PEP 8 -- Style Guide for Python Code - (https://www.python.org/dev/peps/pep-0008/)
-- Google Python Style Guide (https://google.github.io/styleguide/pyguide.html)
-- Python Style Guide by Guido van Rossum (https://legacy.python.org/dev/peps/pep-0008/#introduction)
-
-- Matthes, E. (2015). Python Crash Course: A Hands-On, Project-Based Introduction to Programming. No Starch Press.
 - Beatty, A. (2023). Programming and Scripting [Online Higher Diploma Program]. https://vlegalwaymayo.atu.ie/course/view.php?id=6208
+- Fisher, R. A. (1936). The Use of Multiple Measurements in Taxonomic Problems. Annals of Eugenics, 7(2), 179-188.
+- Google Python Style Guide (https://google.github.io/styleguide/pyguide.html)
+- Matthes, E. (2015). Python Crash Course: A Hands-On, Project-Based Introduction to Programming. No Starch Press.
+- PEP 8 -- Style Guide for Python Code - (https://www.python.org/dev/peps/pep-0008/)
+- Python Style Guide by Guido van Rossum (https://legacy.python.org/dev/peps/pep-0008/#introduction)
