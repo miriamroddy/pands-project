@@ -137,10 +137,19 @@ virginica  0          0.97         0.97          0.96         0.96
 ![Boxplot - Sepal Length](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Sepal_Length.png)
 ![Boxplot - Sepal Width](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Sepal_Width.png)
 ### Histograms
-![Histogram](https://github.com/miriamroddy/pands-problem-sheet/blob/main/Boxplot_Petal_Length.png?raw=true)
+![Histogram - Petal Length](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_length.png)
+![Histogram - Petal Width](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_width.png)
+![Histogram - Sepal Length](https://github.com/miriamroddy/pands-project/blob/main/histogram_sepal_length.png)
+![Histogram - Sepal Width](https://github.com/miriamroddy/pands-project/blob/main/histogram_sepal_width.png)
+### Overlapping Histogram
+![Histogram - Overlapping](https://github.com/miriamroddy/pands-project/blob/main/overlappinghistograms.png)
 ### Scatterplots
+![Scatterplot - Petal Length and Width](https://github.com/miriamroddy/pands-project/blob/main/Scatterplot_Petal.png)
+![Scatterplot - Sepal Length and Width](https://github.com/miriamroddy/pands-project/blob/main/Scatterplot_Sepal.png)
 ### Pairplot
+![Pairplot](https://github.com/miriamroddy/pands-project/blob/main/pairplot.png)
 ### Heatmap
+![Heatmap](https://github.com/miriamroddy/pands-project/blob/main/heatmap.png)
 ----
 
 ## Statistical Analysis
