@@ -131,6 +131,16 @@ virginica  0          0.97         0.97          0.96         0.96
 --------
 ## Data Visualization
 
+### Boxplots
+![Boxplot - Petal Length](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Petal_Length.png)
+![Boxplot - Petal Width](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Petal_Width.png)
+![Boxplot - Sepal Length](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Sepal_Length.png)
+![Boxplot - Sepal Width](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Sepal_Width.png)
+### Histograms
+![Histogram](https://github.com/miriamroddy/pands-problem-sheet/blob/main/Boxplot_Petal_Length.png?raw=true)
+### Scatterplots
+### Pairplot
+### Heatmap
 ----
 
 ## Statistical Analysis
@@ -185,6 +195,7 @@ virginica        50.0  2.03  0.27  1.4  1.8  2.0  2.3  2.5
 - - - -
 
 ## Machine Learning Models
+### KNN Classifier
 Another feature of the dataset is the bimodal distribution of the petal length measurement. It is not immediately clear why the petal length measurement should be bimodal. Some researchers have hypothesized that this bimodality may be due to a combination of genetic and environmental factors, while others have suggested that it may be an artifact of the data collection process. Regardless of the cause, this feature adds an extra layer of complexity to the analysis of the iris dataset and has spurred much discussion and debate in the machine learning community.
 
 - - - -
