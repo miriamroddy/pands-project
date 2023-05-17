@@ -297,20 +297,21 @@ plt.title('Scatterplot of Petal Length and Width')
 plt.xlabel('Petal Length')
 plt.ylabel('Petal Width')
 
-# We want the current legend handles and labels in title case so we retrieve the default legend and handles first:
+# Get the current legend handles and labels. Bit of an awkward way to make sure the legends are capitalized:
 handles, labels = plt.gca().get_legend_handles_labels()
 
-# Change the first letter of the legend labels to uppercase
+# Set the first letter of the legend labels to uppercase
 labels = [label.capitalize() for label in labels]
 
-# Define the updated legend labels
-plt.legend(handles, labels)
+# Set the updated legend labels
+plt.legend (handles, labels)
 
 # Save the scatterplot as a PNG file
 plt.savefig('Scatterplot_Petal.png') ## Save as a .PNG
 plt.show() 
 
-# Now we want to same again but this time, we have a scatterplot of sepal length vs sepal width
+
+# Create a scatterplot of sepal length vs sepal width
 sns.scatterplot(data=Irisdata, x='sepal_length', y='sepal_width', hue='species')
 
 # Set the title and labels for the plot
@@ -318,23 +319,27 @@ plt.title('Scatterplot of Sepal Length and Width')
 plt.xlabel('Sepal Length')
 plt.ylabel('Sepal Width')
 
-# We want the current legend handles and labels in title case so we retrieve the default legend and handles first:
+# Get the current legend handles and labels
 handles, labels = plt.gca().get_legend_handles_labels()
 
-# Change the first letter of the legend labels to uppercase
+# Set the first letter of the legend labels to uppercase
 labels = [label.capitalize() for label in labels]
 
-# Define the updated legend labels
+# Set the updated legend labels
 plt.legend(handles, labels)
 
 # Save the scatterplot as a PNG file
-plt.savefig('Scatterplot_Sepal.png')
+plt.savefig('scatterplot_sepal.png')
+
+# Display the plots
 plt.show()
 
-#################################################################
-#                     Pairplot                                 #
-#################################################################
 
+
+
+# Define a custom color palette with pink and purple colors
+my_palette = ['#E687A5', '#CC5C8F', '#8B5A9B']
+sns.set_palette(my_palette)
 
 # Create a pairplot of the iris dataset, with separate scatter plots for each species
 plot = sns.pairplot(data=Irisdata, hue='species', diag_kind='hist')
@@ -345,24 +350,37 @@ plot.savefig('pairplot.png')
 # Display the plot
 plt.show()
 
-#######################################
-#            Heatmap                  #
-#######################################
-
-# We need to explude the 'species' column from our DF because the data is not numerical
+# Drop the non-numeric column 'species'
 iris = iris.drop('species', axis=1)
 
-# We now calculate the correlation matrix of the remaining columns.
+# Calculate the correlation matrix
 corr = iris.corr()
 
-# Create a heatmap - this time we'll use an inbuilt palette from Seaborn to switch things up
+# Create a heatmap using seaborn with a pink and purple color palette
 cmap = sns.color_palette("RdPu", as_cmap=True)
-## We use seaborn's heatmap function to visualise the correlation matrix using a colour coded grid.
-sns.heatmap(corr, annot=True, cmap=cmap) # the annot=True adds numerical annotations
+sns.heatmap(corr, annot=True, cmap=cmap)
 
-# Save the figure and display it
-plt.savefig('heatmap.png')
+# Show the plot
 plt.show()
 
 
+# Separate features (X) and target variable (y)
+X = Irisdata.drop('species', axis=1)
+y = Irisdata['species']
+
+# Split the dataset into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create a KNN classifier with k=3
+knn = KNeighborsClassifier(n_neighbors=3)
+
+# Fit the model to the training data
+knn.fit(X_train, y_train)
+
+# Make predictions on the test data
+y_pred = knn.predict(X_test)
+
+# Calculate the accuracy of the model
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
 
