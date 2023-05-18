@@ -213,15 +213,7 @@ virginica        50.0  2.03  0.27  1.4  1.8  2.0  2.3  2.5
 When it comes to petal width, it appears that setosa iris flowers have the narrowest petals, while virginica iris flowers have relatively wider petals compared to the other species.
 However, descriptive statistics don't make inferences beyond the observed sample. If we want to make inferences about the three iris species beyond the measurements that [Anderson] (https://en.wikipedia.org/wiki/Edgar_Anderson) took, we need to use statistical methods which will allow us to confidently generalise from a sample to a population. ANOVA (Analysis of Variance) is used to determine whether the means of two or more groups are significantly different from each other by examining the variation between groups compared to the variation within groups. 
 
-I found significant variations among the species (F(2, 147) = 119.26, p < 0.001). Setosa, Versicolor, and Virginica exhibited distinct mean sepal lengths, with Setosa having the shortest mean (M = 5.01), Versicolor having an intermediate mean (M = 5.94), and Virginica having the longest mean (M = 6.59).
 
-Similarly, for 'Sepal Width,' there were significant differences observed (F(2, 147) = 47.36, p < 0.001). While Setosa showed distinctiveness in sepal width (M = 3.42), the differences between Versicolor (M = 2.77) and Virginica (M = 2.97) were not statistically significant.
-
-Regarding 'Petal Length,' the differences between species were highly significant (F(2, 147) = 1180.16, p < 0.001). Setosa displayed the shortest mean petal length (M = 1.46), followed by Versicolor (M = 4.26), and Virginica exhibiting the longest mean (M = 5.55).
-
-Finally, for 'Petal Width,' we found significant variations among the species (F(2, 147) = 960.01, p < 0.001). Setosa demonstrated the smallest mean petal width (M = 0.24), while Versicolor (M = 1.33) and Virginica (M = 2.03) showed higher and significantly different mean values.
-
-Overall, these results confirm that the iris species differ significantly in terms of sepal length, sepal width, petal length, and petal width. These findings provide valuable insights into the distinct characteristics of each iris species, aiding in their identification and classification."
 
 
 
