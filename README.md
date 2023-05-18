@@ -1,4 +1,4 @@
-# Pands Project 2023
+# Pands Project 2023 - will be ready to mark tomorrow
 
 
 
@@ -212,8 +212,6 @@ virginica        50.0  2.03  0.27  1.4  1.8  2.0  2.3  2.5
 ```
 When it comes to petal width, it appears that setosa iris flowers have the narrowest petals, while virginica iris flowers have relatively wider petals compared to the other species.
 However, descriptive statistics don't make inferences beyond the observed sample. If we want to make inferences about the three iris species beyond the measurements that [Anderson] (https://en.wikipedia.org/wiki/Edgar_Anderson) took, we need to use statistical methods which will allow us to confidently generalise from a sample to a population. ANOVA (Analysis of Variance) is used to determine whether the means of two or more groups are significantly different from each other by examining the variation between groups compared to the variation within groups. 
-
-
 
 
 
