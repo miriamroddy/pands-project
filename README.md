@@ -19,7 +19,7 @@ The Iris dataset is a commonly used dataset within machine learning and pattern 
 
 The dataset is useful when exploring different machine learning algorithms, as it provides a means of comparing and evaluating the performance of different models. A task frequently cited in the literature is one that classifies the observations into one of three species of iris flowers: Iris setosa, Iris versicolor, and Iris virginica. The dataset is often used to assess the performace of different classification algorithms, including decision trees, support vector machines, and artificial neural networks.
 
-A strength of the dataset is that it is well-balanced, with an equal number of observations for each of the three species. Since the dataset is well-balanced, it reduces the risk of bias towards one particular class. Additionally, the dataset is relatively small, which makes it easy to work with and analyse. In this project, I will use several Python libraries to investigate the dataset. I will start by assessing whether parametric or non-parametric methods are more suitable, then explore the data with various visualization techniques. I'll then briefly look at the dataset in the context of machine learning.
+A strength of the dataset is that it is [well-balanced](https://towardsdatascience.com/eda-of-the-iris-dataset-190f6dfd946d#:~:text=The%20dataset%20is%20balanced%20i.e.,petal%20width%20and%20petal%20length), with an equal number of observations for each of the three species. Since the dataset is well-balanced, it reduces the risk of bias towards one particular class. Additionally, the dataset is relatively small, which makes it easy to work with and analyse. In this project, I will use several Python libraries to investigate the dataset. I will start by assessing whether parametric or non-parametric methods are more suitable, then explore the data with various visualization techniques. I'll then briefly look at the dataset in the context of machine learning.
 
 
 
@@ -90,7 +90,7 @@ Potential Outliers using Z-scores - A z-score is a commonly used statistical mea
         sepal_length  sepal_width  petal_length  petal_width    species
 15           5.7          4.4           1.5          0.4        setosa
 ```
-D'Agostino-Pearson Test -  This is a statistical test used to assess whether a dataset follows a normal distribution. It is based on the skewness and kurtosis of the data. It's important to conduct this analysis for each variable, and then for each variable divided by species. The reason for this is that we might find that the data is not normally distributed when assessed as a whole but the underlying reason here is that we are looking at different populations. We have a strong theoretical basis to assume that this will be the case here, since we are looking at members of three species of iris. We are using the [scipy.stats.normaltest](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html) function to do this.
+D'Agostino-Pearson Test -  This is a statistical test used to assess whether a dataset follows a normal distribution. It is based on the [skewness and kurtosis](https://www.analyticsvidhya.com/blog/2021/05/shape-of-data-skewness-and-kurtosis/) of the data. It's important to conduct this analysis for each variable, and then for each variable divided by species. The reason for this is that we might find that the data is not normally distributed when assessed as a whole but the underlying reason here is that we are looking at different populations. We have a strong theoretical basis to assume that this will be the case here, since we are looking at members of three species of iris. We are using the [scipy.stats.normaltest](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html) function to do this.
 
 ```
 D'Agostino-Pearson Test:
@@ -155,7 +155,7 @@ There are no significant outliers for sepal length in any of the species.
 ![Boxplot - Sepal Width](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Sepal_Width.png)
 
 The boxplots suggest that the sepal width is generally narrower for Iris setosa, slightly wider for Iris versicolor, and widest for Iris virginica.
-There are a few outliers in the sepal width for Iris setosa. Having no qualifications in botany, I can only speculate here but this may becan indication of some variability within species or it may be the result of measurement errors.
+There are a few outliers in the sepal width for Iris setosa. Having no qualifications in botany, I can only speculate here but this may can be an indication of some variability within species or it may be the result of measurement errors.
 ### Histograms
 I chose to apply a kernel density [KDE](https://likegeeks.com/seaborn-histplot/#histogram_with_KDE) estimate to smooth the distribution and show on the plot as a line that follows the distribution. We can examine this and compare it to the normal distribution.
 ![Histogram - Petal Length](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_length.png)
@@ -163,8 +163,7 @@ I chose to apply a kernel density [KDE](https://likegeeks.com/seaborn-histplot/#
 We are using Seaborn's [histplot](https://seaborn.pydata.org/generated/seaborn.histplot.html) function for this. The histogram of petal length exhibits a [bimodal](https://www.statisticshowto.com/what-is-a-bimodal-distribution/) distribution, indicating the presence of two distinct groups. One mode is centered around 1.0 to 2.0 centimeters, representing Iris setosa, while the other mode is centered around 4.0 to 6.0 centimeters, representing Iris versicolor and Iris virginica.
 ![Histogram - Petal Width](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_width.png)
 
-The histogram of petal width shows a unimodal distribution with a peak around 0.2 to 0.4 centimeters.
-There is a slight skewness towards higher values, indicating a few wider petal widths compared to the majority of the data.
+The histogram of petal width alsoshows a bimodal distribution. There is a slight skewness towards higher values, indicating a few wider petal widths compared to the majority of the data.
 ![Histogram - Sepal Length](https://github.com/miriamroddy/pands-project/blob/main/histogram_sepal_length.png)
 
 The histogram of sepal length suggests that it follows a somewhat normal distribution, with a peak around 5.0 to 6.0 centimeters.
