@@ -143,7 +143,7 @@ Each attribute in the dataset can be visualized on a boxplot. I used seaborn's [
 ![Boxplot - Petal Length](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Petal_Length.png)
 
 We see a clear distinction here between Iris setosa and the other two species, as Iris setosa has significantly shorter petal length compared to Iris versicolor and Iris virginica.
-There are no outliers in petal length for any of the species, implying relatively consistent values within each group.
+There are minimal outliers in petal length for any of the species, implying relatively consistent values within each group.
 ![Boxplot - Petal Width](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Petal_Width.png)
 
 The boxplots demonstrate that the petal width tends to be smallest for Iris setosa, wider for Iris versicolor, and widest for Iris virginica.
@@ -159,37 +159,50 @@ There are a few outliers in the sepal width for Iris setosa. Having no qualifica
 ### Histograms
 I chose to apply a kernel density [KDE](https://likegeeks.com/seaborn-histplot/#histogram_with_KDE) estimate to smooth the distribution and show on the plot as a line that follows the distribution. We can examine this and compare it to the normal distribution.
 ![Histogram - Petal Length](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_length.png)
+
 We are using Seaborn's [hisplot](https://seaborn.pydata.org/generated/seaborn.histplot.html) function for this. The histogram of petal length exhibits a bimodal distribution, indicating the presence of two distinct groups. One mode is centered around 1.0 to 2.0 centimeters, representing Iris setosa, while the other mode is centered around 4.0 to 6.0 centimeters, representing Iris versicolor and Iris virginica.
 ![Histogram - Petal Width](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_width.png)
+
 The histogram of petal width shows a unimodal distribution with a peak around 0.2 to 0.4 centimeters.
 There is a slight skewness towards higher values, indicating a few wider petal widths compared to the majority of the data.
 ![Histogram - Sepal Length](https://github.com/miriamroddy/pands-project/blob/main/histogram_sepal_length.png)
+
 The histogram of sepal length suggests that it follows a somewhat normal distribution, with a peak around 5.0 to 6.0 centimeters.
 There is a slight skewness towards higher values, indicating a few longer sepal lengths compared to the majority of the data.
 ![Histogram - Sepal Width](https://github.com/miriamroddy/pands-project/blob/main/histogram_sepal_width.png)
+
 The histogram of sepal width reveals a somewhat normal distribution, with a peak around 3.0 to 3.5 centimeters.
 There is a slight skewness towards lower values, suggesting a few narrower sepal widths compared to the majority of the data.
 ### Overlapping Histogram
 ![Histogram - Overlapping](https://github.com/miriamroddy/pands-project/blob/main/overlappinghistograms.png)
+
 In an overlapping histogram where the variables are divided by species, we can gain further insights into the data than we have found in the previous histograms.
 Regarding sepal length, the overlapping histogram shows that Iris setosa generally has shorter sepal lengths compared to Iris versicolor and Iris virginica.
 There is some overlap between the distributions of sepal lengths for Iris versicolor and Iris virginica, with Iris virginica tending to have slightly longer sepal lengths overall.
+
 With regard to sepal width, the overlapping histogram indicates that there is some overlap between the sepal width distributions of the three species.
-However, Iris setosa tends to have slightly narrower sepal widths compared to Iris versicolor and Iris virginica, while the latter two species exhibit relatively similar distributions.When we look at petal length, we see that Iris setosa has significantly shorter petal lengths compared to Iris versicolor and Iris virginica.
+However, Iris setosa tends to have slightly narrower sepal widths compared to Iris versicolor and Iris virginica, while the latter two species exhibit relatively similar distributions.
+
+When we look at petal length, we see that Iris setosa has significantly shorter petal lengths compared to Iris versicolor and Iris virginica.
 There is minimal overlap between the distributions of petal lengths for Iris setosa and the other two species, while there is some overlap between Iris versicolor and Iris virginica.
+
 When looking at petal width, we find that Iris setosa generally has much narrower petal widths compared to Iris versicolor and Iris virginica.
 The distributions of petal widths for Iris versicolor and Iris virginica show some overlap, with Iris virginica having slightly wider petal widths on average.
 
 ### Scatterplots
 ![Scatterplot - Petal Length and Width](https://github.com/miriamroddy/pands-project/blob/main/Scatterplot_Petal.png)
+
 This scatterplot reveals a positive correlation between petal length and width, indicating that as petal length increases, petal width tends to increase as well. This type of representation assists in distinguishing between different species - we can see the species as distinct clusters form based on their petal measurements. Additionally, the scatterplot allows for the identification of outliers, further adding to what we saw when looking at boxplots.
 ![Scatterplot - Sepal Length and Width](https://github.com/miriamroddy/pands-project/blob/main/Scatterplot_Sepal.png)
+
 Like in the praveious scatterplot, we see evidence of distinct clusters here, suggesting the presence of different species within the dataset. There appears to be a positive correlation between sepal length and width, indicating that as sepal length increases, sepal width tends to increase as well. However, there are a few outliers that deviate significantly from the general pattern. This reinforces what we saw when looking at the boxplots. 
 ### Pairplot
 ![Pairplot](https://github.com/miriamroddy/pands-project/blob/main/pairplot.png)
+
 This pairplot shows further evidence of clusters within the data - specifically that setosa has a very distinct cluster, and that virginina and versicolour also form unique clusters, albeit clusters that are closer together than they are to setosa.
 ### Heatmap
 ![Heatmap](https://github.com/miriamroddy/pands-project/blob/main/heatmap.png)
+
 The [heatmap](https://pythonbasics.org/seaborn-heatmap/) provides more evidence of a strong positive correlation between petal length and petal width, indicating that as one variable increases, the other tends to increase as well. Additionally, a moderate positive correlation is observed between sepal length and sepal width. These findings emphasize the relationships between our variables, providing insights into the dataset's structure. 
 
 
