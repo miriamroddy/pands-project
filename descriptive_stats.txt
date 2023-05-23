@@ -86,3 +86,99 @@ versicolor 0          0.98         0.97          0.97         0.95
 virginica  0          0.97         0.97          0.96         0.96
            1          0.26         0.18          0.11         0.09
 
+Variable: sepal_length
+------------------------------------
+Species: setosa
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  6.0882  0.124249 NaN     NaN
+Species: versicolor
+            df   sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  13.0552  0.266433 NaN     NaN
+Species: virginica
+            df   sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  19.8128  0.404343 NaN     NaN
+====================================
+Variable: sepal_width
+------------------------------------
+Species: setosa
+            df  sum_sq  mean_sq   F  PR(>F)
+Residual  49.0  7.1138  0.14518 NaN     NaN
+Species: versicolor
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0   4.825  0.098469 NaN     NaN
+Species: virginica
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  5.0962  0.104004 NaN     NaN
+====================================
+Variable: petal_length
+------------------------------------
+Species: setosa
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  1.4752  0.030106 NaN     NaN
+Species: versicolor
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0   10.82  0.220816 NaN     NaN
+Species: virginica
+            df   sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  14.9248  0.304588 NaN     NaN
+====================================
+Variable: petal_width
+------------------------------------
+Species: setosa
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  0.5632  0.011494 NaN     NaN
+Species: versicolor
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  1.9162  0.039106 NaN     NaN
+Species: virginica
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  3.6962  0.075433 NaN     NaN
+====================================
+Variable: sepal_length
+------------------------------------
+Species: setosa
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  6.0882  0.124249 NaN     NaN
+Species: versicolor
+            df   sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  13.0552  0.266433 NaN     NaN
+Species: virginica
+            df   sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  19.8128  0.404343 NaN     NaN
+====================================
+Variable: sepal_width
+------------------------------------
+Species: setosa
+            df  sum_sq  mean_sq   F  PR(>F)
+Residual  49.0  7.1138  0.14518 NaN     NaN
+Species: versicolor
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0   4.825  0.098469 NaN     NaN
+Species: virginica
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  5.0962  0.104004 NaN     NaN
+====================================
+Variable: petal_length
+------------------------------------
+Species: setosa
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  1.4752  0.030106 NaN     NaN
+Species: versicolor
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0   10.82  0.220816 NaN     NaN
+Species: virginica
+            df   sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  14.9248  0.304588 NaN     NaN
+====================================
+Variable: petal_width
+------------------------------------
+Species: setosa
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  0.5632  0.011494 NaN     NaN
+Species: versicolor
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  1.9162  0.039106 NaN     NaN
+Species: virginica
+            df  sum_sq   mean_sq   F  PR(>F)
+Residual  49.0  3.6962  0.075433 NaN     NaN
+====================================
