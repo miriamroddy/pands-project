@@ -27,7 +27,7 @@ A strength of the dataset is that it is well-balanced, with an equal number of o
 
 **Libraries used**:
 
-[*NumPy*](https://www.w3schools.com/python/numpy/numpy_intro.asp) is used for performing mathematical operations and handling large arrays and matrices efficiently.  It is widely used in data analysis and machine learning applications.
+[*NumPy*](https://www.w3schools.com/python/numpy/numpy_intro.asp) is used for performing mathematical operations and handling large arrays and matrices efficiently.  It is widely used in data analysis and machine learning.
 
 The [*seaborn*](https://seaborn.pydata.org/) library focuses on data visualization. It extends the functionality of matplotlib and produces more visually appealing and informative plots. Seaborn includes functions for making many common types of plots, such as scatter plots, line plots, bar plots, histograms, and heatmaps.
 
@@ -70,9 +70,9 @@ Missing Values - When conducting research, is it vital to acknowledge and addres
 Missing Values:
 No
 ```
-We also want to check for duplicates. We do this by using [.duplicated().sum()]{https://note.nkmk.me/en/python-pandas-duplicated-drop-duplicates/}. We see that there are three duplicated rows. This obviously has to be assessed in context. In some datasets, duplicates will highlight information that has been included twice in error. In others however, they may merely highlight several distinct observations that have identical measurements. We can assume that this is the case here - if one takes sufficient samples from a population, one would expect to find this and therefore we don't need to conduct any data cleansing.
+We also want to check for duplicates. We do this by using [.duplicated().sum()](https://note.nkmk.me/en/python-pandas-duplicated-drop-duplicates/). We see that there are three duplicated rows. This obviously has to be assessed in context. In some datasets, duplicates will highlight information that has been included twice in error. In others however, they may merely highlight several distinct observations that have identical measurements. We can assume that this is the case here - if one takes sufficient samples from a population, one would expect to find this and therefore we don't need to conduct any data cleansing.
 
-Duplicates -
+Duplicates 
 ```
 Duplicates:
 3 duplicates found.
@@ -141,15 +141,19 @@ This stage involves using various visualization techniques to examine the data.
 ### Boxplots
 Each attribute in the dataset can be visualized on a boxplot. I used seaborn's [boxplot()](https://pythonbasics.org/seaborn-boxplot/) method.  The box in the middle of the plot represents the interquartile range (IQR), which is the range between the 25th and 75th percentiles of the data. The line inside the box represents the median value of the data. The whiskers extending from the box represent the range of values that fall within 1.5 times the IQR. Any points outside this range are considered outliers and are plotted as individual points.
 ![Boxplot - Petal Length](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Petal_Length.png)
+
 We see a clear distinction here between Iris setosa and the other two species, as Iris setosa has significantly shorter petal length compared to Iris versicolor and Iris virginica.
 There are no outliers in petal length for any of the species, implying relatively consistent values within each group.
 ![Boxplot - Petal Width](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Petal_Width.png)
+
 The boxplots demonstrate that the petal width tends to be smallest for Iris setosa, wider for Iris versicolor, and widest for Iris virginica.
 There are a few outliers in petal width for both Iris versicolor and Iris virginica, indicating some variation in these species.
 ![Boxplot - Sepal Length](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Sepal_Length.png)
+
 The boxplots indicate that the sepal length tends to be shortest for Iris setosa, longer for Iris versicolor, and longest for Iris virginica.
 There are no significant outliers for sepal length in any of the species.
 ![Boxplot - Sepal Width](https://github.com/miriamroddy/pands-project/blob/main/Boxplot_Sepal_Width.png)
+
 The boxplots suggest that the sepal width is generally narrower for Iris setosa, slightly wider for Iris versicolor, and widest for Iris virginica.
 There are a few outliers in the sepal width for Iris setosa. Having no qualifications in botany, I can only speculate here but this may becan indication of some variability within species or it may be the result of measurement errors.
 ### Histograms
