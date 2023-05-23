@@ -288,9 +288,9 @@ Next, we visualized the data using scatter plots, histogram, and box plots to ex
 Furthermore, we conducted statistical analysis, computing the mean, standard deviation, and correlation coefficients for the dataset. The correlations confirmed our visual observations, indicating strong positive correlations between petal length and petal width, as well as between sepal length and petal length.
 This exploratory analysis serves as a foundation for further investigations and applications of the Iris dataset in various machine learning and data analysis tasks.
 
-A key feature of the dataset to have emerged is the bimodal distribution of the petal length measurement. It is not immediately clear why the petal length measurement should be bimodal. Some researchers have hypothesized that this bimodality may be due to a combination of genetic and environmental factors, while others have suggested that it may be an artifact of the data collection process. Regardless of the cause, this feature adds an extra layer of complexity to the analysis of the iris dataset and has spurred much discussion and debate in the machine learning community.
+A key feature of the dataset to have emerged is the bimodal distribution of the petal length measurement. It is not immediately clear why the petal length measurement should be bimodal. [Some researchers](https://www.sciencedirect.com/topics/computer-science/iris-virginica) have hypothesized that this bimodality may be due to a combination of genetic and environmental factors, while others have suggested that it may be an artifact of the data collection process - perhaps Anderson had an off day when collecting samples. 
 
-The KNN classifier was a mean of dipping our toes into a more interesting analysis - the accuracy of 1.0 shows that the predictions made by the model are 100% accurate, indicating that every single prediction made by the model matched our expectations perfectly. 
+The KNN classifier was a means of dipping our toes into a more interesting analysis - the accuracy of 1.0 shows that the predictions made by the model are 100% accurate, indicating that every single prediction made by the model matched our expectations perfectly. 
 - - - -
 
 
