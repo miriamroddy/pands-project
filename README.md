@@ -160,7 +160,7 @@ There are a few outliers in the sepal width for Iris setosa. Having no qualifica
 I chose to apply a kernel density [KDE](https://likegeeks.com/seaborn-histplot/#histogram_with_KDE) estimate to smooth the distribution and show on the plot as a line that follows the distribution. We can examine this and compare it to the normal distribution.
 ![Histogram - Petal Length](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_length.png)
 
-We are using Seaborn's [hisplot](https://seaborn.pydata.org/generated/seaborn.histplot.html) function for this. The histogram of petal length exhibits a bimodal distribution, indicating the presence of two distinct groups. One mode is centered around 1.0 to 2.0 centimeters, representing Iris setosa, while the other mode is centered around 4.0 to 6.0 centimeters, representing Iris versicolor and Iris virginica.
+We are using Seaborn's [histplot](https://seaborn.pydata.org/generated/seaborn.histplot.html) function for this. The histogram of petal length exhibits a [bimodal](https://www.statisticshowto.com/what-is-a-bimodal-distribution/) distribution, indicating the presence of two distinct groups. One mode is centered around 1.0 to 2.0 centimeters, representing Iris setosa, while the other mode is centered around 4.0 to 6.0 centimeters, representing Iris versicolor and Iris virginica.
 ![Histogram - Petal Width](https://github.com/miriamroddy/pands-project/blob/main/histogram_petal_width.png)
 
 The histogram of petal width shows a unimodal distribution with a peak around 0.2 to 0.4 centimeters.
@@ -267,7 +267,9 @@ versicolor       50.0  1.33  0.20  1.0  1.2  1.3  1.5  1.8
 virginica        50.0  2.03  0.27  1.4  1.8  2.0  2.3  2.5
 ```
 When it comes to petal width, it appears that setosa iris flowers have the narrowest petals, while virginica iris flowers have relatively wider petals compared to the other species.
-However, descriptive statistics don't make inferences beyond the observed sample. If we want to make inferences about the three iris species beyond the measurements that [Anderson](https://en.wikipedia.org/wiki/Edgar_Anderson) took, we need to use statistical methods which will allow us to confidently generalise from a sample to a population. ANOVA (Analysis of Variance) is used to determine whether the means of two or more groups are significantly different from each other by examining the variation between groups compared to the variation within groups. I used a [linear OLS model](https://www.statsmodels.org/devel/anova.html) to do this. The results suggest that these observations we saw reach significance and we can therefore apply the observations from the sample to an actual population.
+However, descriptive statistics don't make inferences beyond the observed sample. If we want to make inferences about the three iris species beyond the measurements that [Anderson](https://en.wikipedia.org/wiki/Edgar_Anderson) took, we need to use statistical methods which will allow us to confidently generalise from a sample to a population. 
+
+ANOVA (Analysis of Variance) is used to determine whether the means of two or more groups are significantly different from each other by examining the variation between groups compared to the variation within groups. I used a [linear OLS model](https://www.statsmodels.org/devel/anova.html) to do this. The results suggest that these observations we saw reach significance and we can therefore apply the observations from the sample to an actual population.
 
 
 
