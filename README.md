@@ -38,8 +38,7 @@ The [*seaborn*](https://seaborn.pydata.org/) library focuses on data visualizati
 [*SciPy.stats*](https://www.geeksforgeeks.org/scipy-stats/) provides functions for statistical analysis, including the shapiro, normaltest and norm functions used in this project.
 
 [*statsmodels*](https://pypi.org/project/statsmodels/) is built on top of NumPy, SciPy, and Pandas, and performs linear regression, time series analysis, generalized linear models etc.
- -----------
-
+ 
 ## Exploratory Data Analysis
  
 The aim of exporatory data analysis is to uncover patterns, relationships, and insights into the datasat, which will then help us to decide which methods to use for subsequent stages. For the Iris dataset specifically, we had the option of assuming that the data was [well balanced](https://towardsdatascience.com/eda-of-the-iris-dataset-190f6dfd946d#:~:text=The%20dataset%20is%20balanced%20i.e.,petal%20width%20and%20petal%20length), normally distributed and doesn't need much in the way of data-cleaning. It is, after all, the "Hello World" of Data Science, and wouldn't be such a commonly cited exemplar if it contained lots of messy data. However, we won't learn a whole lot from that, nor is it ever good practice to merely assume - we might even find out something interesting.
@@ -134,6 +133,7 @@ virginica  0          0.97         0.97          0.96         0.96
 For both the Shapiro-Wilk and the D'Agostino-Pearson tests, we want to look at the p-values in both tables (row 1). If the p-value is greater than the chosen significance level (e.g., 0.05), it suggests that there is not enough evidence to reject the null hypothesis of normality. In this case, we can consider the distribution for that species and feature to be approximately normal, once they have been divided by species. 
 
 It's important to note that the data doesn't appear normally distributed if you look at the dataset as a whole, but as mentioned previously, this is because we are looking at 3 different populations together and it makes a lot more sense to examine them when divided by species.
+
 --------
 ## Data Visualization
 
