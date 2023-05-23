@@ -14,10 +14,12 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import scipy.stats as stats
-from scipy.stats import shapiro, normaltest
+from scipy.stats import shapiro, normaltest, f_oneway, ttest_ind
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
 
 
 ## We load data from a CSV file named 'iris.csv' into a pandas DataFrame called 'Irisdata':
@@ -155,12 +157,41 @@ with open('descriptive_stats.txt', 'a') as f:
     f.write(str(shapiroResults.round(2)))
     f.write('\n\n')
 
-    # Now we want to perform the test divided by species.
+    ## Now we want to perform the test divided by species.
 
     f.write("Shapiro-Wilk Test by Species:\n\n")
     shapiroResultsSpecies = Irisdata.groupby('species').apply(lambda x: x.iloc[:, :-1].apply(stats.shapiro).round(2))
     f.write(str(shapiroResultsSpecies))
     f.write('\n\n')
+
+## ANOVA - List of variables to analyze
+variables = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+
+## Open the file in append mode
+file_name = "descriptive_stats.txt"
+with open(file_name, "a") as f:
+
+## we start with a for loop to Perform ANOVA for each variable
+
+    for variable in variables:
+        f.write(f"Variable: {variable}\n")
+        f.write("------------------------------------\n")
+
+## Perform separate ANOVA for each species - we use ols from statsmodel.api
+
+        for species in Irisdata['species'].unique():
+            subset_data = Irisdata[Irisdata['species'] == species]
+            model = ols(f'{variable} ~ 1', data=subset_data).fit()
+            anova_result = sm.stats.anova_lm(model)
+
+            f.write(f"Species: {species}\n")
+            f.write(str(anova_result))
+            f.write("\n")
+
+        f.write("====================================\n")
+
+
+
 
 ## This is the end of us writing to our descriptive_stats file. Because we used with open, we know that the file will ve automaticall closed so we don't 
 ## need to explicitly request this.
@@ -169,12 +200,13 @@ with open('descriptive_stats.txt', 'a') as f:
 #                                    Vizualisations                                              #
 ##################################################################################################
 
-## Now we will create various visualizations. To assuage boredom and to attempt for some consistency, we want to create a colour palette with nice colours - 
-## I'm choosing pinks and purples. We are telling seasborn specifically to use this palette:
-
+## Now we will create various visualizations. 
 ##############
 #  Boxplots  #
 ##############
+
+## To assuage boredom and to attempt for some consistency, we want to create a colour palette with nice colours - 
+## I'm choosing pinks/purples. We are telling seaborn specifically to use this palette:
 
 colourpalette = ["#E687A5", "#CC5C8F", "#8B5A9B", "#5E3C78"]
 sns.set_palette(colourpalette)
@@ -222,7 +254,7 @@ iris = sns.load_dataset('iris')
 
 # Reference my colour palette again
 colourpalette = ["#E687A5", "#CC5C8F", "#8B5A9B", "#5E3C78"]  # We'll go with the palette I already used
-## Four colours are defined here but i'll pick the first one a (pale pink) later in the code.
+## Four colours are defined here but it will default to the first one a (pale pink) .
 
 # Set the plot style. We'll use the whitegrid style to add grid lines with a white background. 
 
@@ -231,12 +263,12 @@ sns.set_style("whitegrid")
 # We make a list which will contain each of our variables.
 variables = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
 
-## We use a for lop so we can iterate over each variable in our list.
+## We use a for loop so we can iterate over each variable in our list.
 
 for variable in variables:
     plt.figure(figsize=(8, 6))
 
-## We use Seaborn's hisplot function to create a histogram for each variable in our list, using 
+## We use Seaborn's histplot function to create a histogram for each variable in our list, using 
 ## the first colour in our palette [the 0 indicates that it's the first colour].
 
     sns.histplot(data=iris, x=variable, color=colourpalette[0], kde=True)
@@ -355,7 +387,7 @@ iris = iris.drop('species', axis=1)
 # We now calculate the correlation matrix of the remaining columns.
 corr = iris.corr()
 
-# Create a heatmap - this time we'll use an inbuilt palette from Seaborn to switch things up
+# Create a heatmap - this time we'll use an inbuilt palette (RdPu) from Seaborn to switch things up
 cmap = sns.color_palette("RdPu", as_cmap=True)
 ## We use seaborn's heatmap function to visualise the correlation matrix using a colour coded grid.
 sns.heatmap(corr, annot=True, cmap=cmap) # the annot=True adds numerical annotations
@@ -365,4 +397,28 @@ plt.savefig('heatmap.png')
 plt.show()
 
 
+####################################
+#          Machine Learning        #
+####################################
 
+# We start by Separating the features (X) and the target variable (y)
+X = Irisdata.drop('species', axis=1)
+y = Irisdata['species']
+
+## we split our dataset into two sets - the training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+##  we create a KNN classifier with k=3- ref: https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html
+knn = KNeighborsClassifier(n_neighbors=3)
+
+## Fit the model to our training data
+knn.fit(X_train, y_train)
+
+## Make predictions on our test data
+y_pred = knn.predict(X_test)
+
+## Calculate the accuracy of the model
+accuracy = accuracy_score(y_test, y_pred)
+
+## We print the score to the console
+print("Accuracy:", accuracy)
