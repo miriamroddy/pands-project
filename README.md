@@ -12,7 +12,7 @@
 - [Conclusion](#conclusion)
 
 
-======
+
 - - - -
 ## Introduction
 The Iris dataset is a commonly used dataset within machine learning and pattern recognition fields. It was introduced by Ronald Fisher in 1936 as part of his research on multivariate statistics. The dataset consists of 150 observations of iris flowers, each with four measurements: sepal length, sepal width, petal length, and petal width.
@@ -279,7 +279,7 @@ The KNN classifier was a mean of dipping our toes into a more interesting analys
 
 
 ## Other References
-====
+
 - Beatty, A. (2023). Programming and Scripting [Online Higher Diploma Program]. https://vlegalwaymayo.atu.ie/course/view.php?id=6208
 - Fisher, R. A. (1936). The Use of Multiple Measurements in Taxonomic Problems. Annals of Eugenics, 7(2), 179-188.
 - Google Python Style Guide (https://google.github.io/styleguide/pyguide.html)
